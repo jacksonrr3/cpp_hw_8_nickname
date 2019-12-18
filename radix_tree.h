@@ -76,15 +76,16 @@ class RadixTrie {
 					it.second->print_name(name, pref); });
 			}
 			
-			if (_end) { pref.pop_back(); }
-			else {
+			if (pref == name) {
 				size_t pos = pref.find(_lable);
 				std::string temp = pref.substr(0, pos);
 				pref = std::move(temp);
+				}
+			else { 
+				pref.pop_back(); 
 			}
 			name = pref;
 		}
-	
 	};
 
 	//корневой лист дерева
