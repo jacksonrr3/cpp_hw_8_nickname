@@ -66,8 +66,8 @@ class RadixTrie {
 		}
 
 		void print_name(std::string& name, std::string& pref) {
+			if (_lable.empty()) { pref.clear(); name.clear(); }
 			pref = (name.empty()) ? _lable : name + _lable[0];
-
 			name += _lable;
 			if (_end) {std::cout << name << " " << pref << std::endl;}
 
@@ -83,8 +83,6 @@ class RadixTrie {
 				pref = std::move(temp);
 			}
 			name = pref;
-			
-
 		}
 	
 	};
