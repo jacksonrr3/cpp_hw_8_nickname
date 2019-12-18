@@ -10,6 +10,5 @@ int main() {
 	
 	trie.print_names();
 	trie.print_tree();
-
 	return 0;
 }
