@@ -1,8 +1,7 @@
 #pragma once
 
 #include <iostream>
-#include <array>
-#include <unordered_map>
+#include <map>
 #include <memory>
 #include <string>
 #include <algorithm>
@@ -14,7 +13,7 @@ class RadixTrie {
 	class Node {
 		std::string _lable;     //хранит часть слова
 		bool _end = true;		//обозначение окончания слова
-		std::unordered_map<char, std::unique_ptr<Node>> _children; //указатели на возможные "продолжения" слова
+		std::map<char, std::unique_ptr<Node>> _children; //указатели на возможные "продолжения" слова
 
 		void add_new_child(std::string&& str) {
 			if (_children[str[0]]) {
