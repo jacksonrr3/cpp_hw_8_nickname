@@ -5,6 +5,7 @@ int main() {
 	RadixTrie trie;
 	std::string name;
 	while (std::getline(std::cin, name)) {
+		if(name.empty()){break;}
 		trie.append(name);
 	}
 	
