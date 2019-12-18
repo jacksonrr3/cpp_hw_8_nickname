@@ -7,7 +7,6 @@
 #include <string>
 #include <algorithm>
 
-
 //класс, реализуюий структуру RadixTree для хранения различных вариантов имен
 class RadixTrie {
 
@@ -50,7 +49,7 @@ class RadixTrie {
 			}
 
 			if (it.second != str.end()) {
-				add_new_child(std::move(std::string(it.second, str.end())));
+				add_new_child(std::string(it.second, str.end()));
 			}
 
 			_end = (_children.empty() || (it.second == str.end()));
@@ -81,7 +80,7 @@ class RadixTrie {
 			if (_end) { pref.pop_back(); }
 			else {
 				size_t pos = pref.find(_lable);
-				std::string temp = std::move(pref.substr(0, pos));
+				std::string temp = pref.substr(0, pos);
 				pref = std::move(temp);
 			}
 			name = pref;
@@ -110,7 +109,7 @@ public:
 	void print_tree() {
 		if (_root){
 			int level = 0;
-			_root->print_node(0);
+			_root->print_node(level);
 		}
 	}
 
